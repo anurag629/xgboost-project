@@ -3,11 +3,11 @@ from src.model import train_model, evaluate_model
 from src.visualize import plot_feature_importance
 from src.utils import save_model
 
-# Load and preprocess data
+# Load the Iris dataset
 data_path = "data/iris/iris.data"
 X, y = load_data(data_path)
 
-# Preprocess data (e.g., scaling) if needed
+# Preprocess and split the dataset
 X_train, X_test, y_train, y_test = preprocess_data(X, y)
 
 # Train the model
@@ -22,5 +22,5 @@ print(report)
 # Plot feature importance
 plot_feature_importance(model, "results/feature_importance.png")
 
-# Save the model
-save_model(model, "models/iris_xgboost.json")
+# Save the trained model
+save_model(model, "models/xgboost_model.json")

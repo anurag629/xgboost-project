@@ -3,7 +3,7 @@ from xgboost import XGBClassifier
 
 def tune_hyperparameters(X_train, y_train):
     """Perform hyperparameter tuning using GridSearchCV."""
-    # Define the hyperparameter grid
+    # Define hyperparameter grid
     param_grid = {
         'learning_rate': [0.01, 0.1, 0.2],
         'max_depth': [3, 5, 7],
@@ -25,6 +25,6 @@ def tune_hyperparameters(X_train, y_train):
     # Fit the model
     grid_search.fit(X_train, y_train)
 
-    # Return best parameters
+    # Return the best estimator
     print(f"Best Parameters: {grid_search.best_params_}")
     return grid_search.best_estimator_
